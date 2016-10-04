@@ -3,20 +3,16 @@
         <title>Caspers blog</title>
     </head>
     <body>
-        <div>
-            <h1><a href="">Blog van Casper</a></h1>
-        </div>
+       <div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
-        <div>
-            <p>published: 02.10.2016, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Hier staat dan de tekst van de eerste post.</p>
-        </div>
-
-        <div>
-            <p>published: 02.10.2016, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>en hier de tekst van de tweede post.</p>
-        </div>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
